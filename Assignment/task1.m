@@ -29,26 +29,14 @@ disp("expNeg: " + expNeg);
 
 %Underlying
 stockPriceMatrix = calcStockPrice(p, u, d, S0);
-<<<<<<< HEAD
-formattedStockPriceMatrix = formatBinomialTree(stockPriceMatrix); 
-disp(formattedStockPriceMatrix); 
-%disp(stockPriceMatrix);
-=======
 disp("Underlying binary tree: ");
 disp(stockPriceMatrix); 
->>>>>>> f6a5cca1ef99f0bf34efe450de923afa6ff9fe78
 
 %Option
 optionPriceMatrix = zeros(p+1); %have to instantiate here, beacuse recursive algorithm
 optionPriceMatrix = calcOptionPrice(optionPriceMatrix, p+1, stockPriceMatrix, K, q, expNeg);
-<<<<<<< HEAD
-formattedStockPriceMatrix = formatBinomialTree(optionPriceMatrix); 
-disp(formattedStockPriceMatrix); 
-%disp(optionPriceMatrix);
-=======
 disp("European binary tree (without dividend payments)");
 disp(optionPriceMatrix); 
->>>>>>> f6a5cca1ef99f0bf34efe450de923afa6ff9fe78
 
 function stockPriceMatrix = calcStockPrice(p, u, d, S0)
     stockPriceMatrix = zeros(p+1);

@@ -1,16 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 format short g;
-<<<<<<< HEAD
-C_Target = (62.75+ 68.25)/2;   %Call-option mid price
-disp(C_Target);
-S = 2228.072;           % Initial index price
-K = 2260;               % Strike price                 
-r = 0.0427;             % Risk-free rate
-p = 8; 
-holiday_vector = ["2023-12-24";"2023-12-25";"2023-12-26";"2023-12-31";"2024-01-01";"2024-01-05";
-    "2024-03-29";"2024-04-01";"2024-05-09";"2024-06-06";"2024-06-21"];
-
-=======
 C_Target = (62.75+ 68.25)/2;
 S = 2228.072;           
 K = 2260;               
@@ -19,7 +8,6 @@ p = 10;
 toleranslevel = 0.01;
 holiday_vector = ["2023-12-24";"2023-12-25";"2023-12-26";"2023-12-31";"2024-01-01";"2024-01-05";
     "2024-03-29";"2024-04-01";"2024-05-09";"2024-06-06";"2024-06-21"];
->>>>>>> f6a5cca1ef99f0bf34efe450de923afa6ff9fe78
 startDate = datetime(2023,11,23);
 endDate = datetime(2024,03,04);
 
@@ -34,12 +22,9 @@ d = calculateD(sigma, deltaTVar);
 u = calculateU(sigma, deltaTVar);
 q = calculateQ(r, d, u, deltaTVar);
 
-<<<<<<< HEAD
-=======
 disp("--------")
 disp("Task 2b):")
 disp("--------")
->>>>>>> f6a5cca1ef99f0bf34efe450de923afa6ff9fe78
 indexPriceMatrix = calcIndexPrice(p, u, d, S);
 optionPriceMatrix = zeros(p+1); %have to instantiate here, beacuse recursive algorithm
 optionPriceMatrix = calcOptionPrice(optionPriceMatrix, p+1, indexPriceMatrix, K, q, exp(-1*r*deltaTVar));
